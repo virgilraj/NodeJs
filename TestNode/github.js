@@ -11,11 +11,11 @@ var github = new GitHubApi({
     timeout: 5000
 });
 
-github.authenticate({
-    type: "basic",
-    username: 'virgilraj',
-    password: 'virgil254617'
-});
+//github.authenticate({
+//    type: "basic",
+//    username: 'virgilraj',
+//    password: 'virgil254617'
+//});
 
 app.get('/', function (req, res) {
     res.send('Hello<br><a href="/auth">Log in with Github</a>');
@@ -24,8 +24,34 @@ app.get('/', function (req, res) {
 app.listen(8888);
 console.log('Server satarted');
 
+app.get('/Callback', function (req, res) {
+    res.send("Hefdsdfsdfsdf");
+});
+
+
 app.get('/auth', function (req, res) {
+    github.authenticate({
+        type: "basic",
+        username: 'softcrylic.testautomation@gmail.com',
+        password: 'Softcrylic123'
+    }, function (err, rrss) {
+        console.log(JSON.stringify(rrss));
+    });
+
+    //console.log(res);
+
     var gitRes = {};
+    //github.authorization.create({
+    //    scopes: ["user", "public_repo", "repo", "repo:status", "gist"],
+    //    note: 'localhost:8888',
+    //    note_url : 'http://localhost:8888'
+    //}, function (err, authRes) {
+    //    if (err != null)
+    //        console.log(JSON.stringify(err));
+    //    else
+    //    console.log(JSON.stringify(authRes));
+    //});
+
     github.authorization.getAll({ id: "virgilraj" }, function (err, authRes) {
         gitRes.authRes = authRes;
         //console.log(JSON.stringify(res));
@@ -52,10 +78,7 @@ app.get('/auth', function (req, res) {
             });
         });
 
-
-        
-
-        console.log('sdf');
+        console.log(req.query.id);
         //console.log(JSON.stringify(err1));
     });
 });
