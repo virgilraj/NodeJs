@@ -56,7 +56,8 @@ var oauth2 = require('simple-oauth2')({
 
 // Authorization uri definition
 var authorization_uri = oauth2.authCode.authorizeURL({
-    redirect_uri: 'http://localhost:8888/callback'
+    redirect_uri: 'http://localhost:8888/callback',
+    scope: ["user", "public_repo", "repo", "repo:status", "gist"]
 });
 
 // Initial page redirecting to Github

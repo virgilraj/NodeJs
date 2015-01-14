@@ -94,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app.js" />
+    <Content Include="bitbucket.js" />
     <Content Include="fileio.js" />
     <Content Include="github.js" />
     <Content Include="githubold.js" />
@@ -113,6 +114,7 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
+    <Content Include="config.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

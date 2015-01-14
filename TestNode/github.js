@@ -13,8 +13,8 @@ var github = new GitHubApi({
 
 //github.authenticate({
 //    type: "basic",
-//    username: 'virgilraj',
-//    password: 'virgil254617'
+//    username: 'username',
+//    password: 'password'
 //});
 
 app.get('/', function (req, res) {
