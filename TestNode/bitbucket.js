@@ -88,7 +88,6 @@ var authorization_uri = oauth2.authCode.authorizeURL({
 
 // Initial page redirecting to Github
 app.get('/auth/github', function (req, res) {
-    console.log(authorization_uri);
     res.redirect(authorization_uri);
 });
 
@@ -116,7 +115,6 @@ app.get('/getgithub', function (req, res) {
 //Github callback method
 app.get(config.github.callbackmethod, function (req, res) {
     var code = req.query.code;
-    console.log('/callback');
     oauth2.authCode.getToken({
         code: code,
         redirect_uri: config.github.calbackurl
